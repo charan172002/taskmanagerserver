@@ -5,6 +5,7 @@ var http = require('http').Server(app)
 var io = require('socket.io')(http)
 var mongoose = require('mongoose')
 var cors = require('cors')
+const PORT = process.env.PORT || 8000;
 
 
 app.use(cors())
@@ -314,6 +315,6 @@ io.on('connection', (socket) => {
 
 mongoose.connect(dbUrl);
 
-var server = http.listen(8000, () => {
+var server = http.listen(PORT, () => {
     console.log('server is listening on port', server.address().port)
 })
