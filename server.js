@@ -96,8 +96,8 @@ app.post('/signUp', async (req, res) => {
         console.log(savedMessage2)
 
         console.log('saved')
-
-        res.sendStatus(200)
+        return res.send({ status: "accepted" })
+        // res.sendStatus(200)
     } catch (error) {
 
         if (error.code==11000)
